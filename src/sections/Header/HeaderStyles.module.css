@@ -1,0 +1,260 @@
+/* Import the font style */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* Root Variables */
+:root {
+  --primary-color: #1a1a1a; /* Dark background for the sidebar */
+  --secondary-color: #f0f0f0; /* Light color for text and logo */
+  --accent-color: #ff6b6b; /* Accent color for hover states */
+  --text-color: #333; /* Primary text color */
+}
+
+/* Universal Box Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Flex Container */
+.container {
+  display: flex;
+  min-height: 100vh; /* Full viewport height */
+}
+
+/* Main content area */
+main {
+  flex: 1; /* Take up the remaining space */
+  padding: 40px;
+  margin-left: 80px; /* Space for the sidebar */
+  transition: margin-left 0.3s ease; /* Smooth transition for margin changes */
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 80px; /* Initial narrow width */
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Changed from space-between to center */
+  padding: 40px 0;
+  z-index: 1000;
+  transition: width 0.2s ease; /* Animation for expanding the sidebar */
+}
+
+header:hover {
+  width: 200px; /* Expanded width on hover */
+  justify-content: center; /* Maintain center alignment on hover */
+}
+
+.logo {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  color: var(--secondary-color);
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+header:hover .logo {
+  transform: rotate(0deg);
+  writing-mode: horizontal-tb;
+}
+
+header:hover .nav-link {
+  transform: rotate(0deg);
+  writing-mode: horizontal-tb;
+  margin: 15px 0;
+}
+
+.nav-link:hover {
+  color: var(--accent-color);
+}
+
+/* Navigation links */
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+}
+
+.navItem {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  color: var(--secondary-color);
+  text-decoration: none;
+  margin: 20px 0;
+  transition: transform 0.3s ease, color 0.3s ease; /* Ensure the transition includes transform */
+  font-size: 16px;
+  display: block; /* Ensures that the anchor tag takes the full available space */
+}
+
+/* Rotate text on hover over the entire header, not just the nav-item */
+header:hover .navItem {
+  transform: rotate(0deg);
+  writing-mode: horizontal-tb;
+  margin: 15px 0;
+}
+
+/* Adjust hover color change */
+.navItem:hover {
+  color: var(--accent-color);
+}
+
+#particle-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Allows clicks to pass through */
+  overflow: hidden; /* Keeps particles within the header */
+}
+
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes the bottom bar to the bottom */
+  padding: 20px 0;
+  z-index: 1000;
+}
+
+.bottom-bar {
+  width: 100%; /* Full width of the header */
+  height: 50px; /* Fixed height */
+  background-color: var(--secondary-color); /* Light color for contrast */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  height: 100dvh;
+  min-height: 500px;
+
+  .hero {
+    max-width: 200px;
+  }
+
+  span {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+
+    a {
+      margin: 0;
+
+      img {
+        width: 30px;
+      }
+    }
+  }
+
+  a {
+    width: fit-content;
+    align-self: center;
+  }
+
+  button {
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    border: none;
+    border-radius: 20px;
+    width: 126px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+  }
+
+  button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.colorModeContainer {
+  position: relative;
+}
+
+.colorMode {
+  position: absolute;
+  right: 0;
+  width: 25px;
+}
+
+.colorMode:hover {
+  cursor: pointer;
+}
+
+.description {
+  max-width: 24ch;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (width >= 800px) {
+  .container {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .hero {
+      max-width: 350px;
+      width: 350px;
+    }
+  }
+}
+
+@media (width >= 1400px) {
+  .container {
+    .hero {
+      max-width: 400px;
+      width: 400px;
+    }
+  }
+}
