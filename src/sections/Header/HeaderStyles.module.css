@@ -1,260 +1,171 @@
-/* Import the font style */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-
-/* Root Variables */
 :root {
-  --primary-color: #1a1a1a; /* Dark background for the sidebar */
-  --secondary-color: #f0f0f0; /* Light color for text and logo */
-  --accent-color: #ff6b6b; /* Accent color for hover states */
-  --text-color: #333; /* Primary text color */
+  --primary-color: #ffffff; /* White */
+  --bg-color: #000000; /* Black */
 }
 
-/* Universal Box Styling */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Flex Container */
 .container {
-  display: flex;
-  min-height: 100vh; /* Full viewport height */
-}
-
-/* Main content area */
-main {
-  flex: 1; /* Take up the remaining space */
-  padding: 40px;
-  margin-left: 80px; /* Space for the sidebar */
-  transition: margin-left 0.3s ease; /* Smooth transition for margin changes */
-}
-
-header {
   position: fixed;
-  left: 0;
   top: 0;
-  bottom: 0;
-  width: 80px; /* Initial narrow width */
-  background-color: var(--primary-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* Changed from space-between to center */
-  padding: 40px 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
-  transition: width 0.2s ease; /* Animation for expanding the sidebar */
-}
-
-header:hover {
-  width: 200px; /* Expanded width on hover */
-  justify-content: center; /* Maintain center alignment on hover */
+  display: flex;
+  justify-content: space-between; /* Adjusted to space between for logo and menu */
+  align-items: center;
+  background-color: var(--bg-color);
+  padding: 15px 30px;
 }
 
 .logo {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  transform: rotate(180deg);
-  color: var(--secondary-color);
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  letter-spacing: 2px;
-  transition: all 0.3s ease;
+  margin-left: 20px; /* Adjust margin as needed */
 }
 
-header:hover .logo {
-  transform: rotate(0deg);
-  writing-mode: horizontal-tb;
+.hamburger {
+  background: transparent;
+  border: none;
+  color: var(--primary-color);
+  font-size: 36px;
+  cursor: pointer;
+  z-index: 3000;
+  margin-right: 40px;
 }
 
-header:hover .nav-link {
-  transform: rotate(0deg);
-  writing-mode: horizontal-tb;
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  height: 100vh;
+  width: 250px;
+  background-color: var(--bg-color);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+  z-index: 2000;
+}
+
+.menu.open {
+  transform: translateX(0);
+}
+
+.navLinks {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+}
+
+.navLinks li {
   margin: 15px 0;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Initial position slightly off-screen */
 }
 
-.nav-link:hover {
-  color: var(--accent-color);
+.menu.open .navLinks li:nth-child(1) {
+  animation: fadeInFromTop 0.5s ease-in-out forwards;
+  animation-delay: 0.2s;
 }
 
-/* Navigation links */
-nav {
+.menu.open .navLinks li:nth-child(2) {
+  animation: fadeInFromTop 0.5s ease-in-out forwards;
+  animation-delay: 0.4s;
+}
+
+.menu.open .navLinks li:nth-child(3) {
+  animation: fadeInFromTop 0.5s ease-in-out forwards;
+  animation-delay: 0.6s;
+}
+
+.menu.open .navLinks li:nth-child(4) {
+  animation: fadeInFromTop 0.5s ease-in-out forwards;
+  animation-delay: 0.8s;
+}
+
+.navLinks a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.navLinks a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  max-width: 50px;
+  height: auto;
+  margin-left: 20px;
+}
+
+/* Container for Social Links */
+.socialLinksContainer {
+  margin-top: 500px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  list-style: none;
+  gap: 10px;
+  opacity: 0; /* Initially hidden */
 }
 
-.navList {
-  list-style: none;
-  padding: 0;
+.menu.open .socialLinksContainer {
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
-.navItem {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  transform: rotate(180deg);
-  color: var(--secondary-color);
-  text-decoration: none;
-  margin: 20px 0;
-  transition: transform 0.3s ease, color 0.3s ease; /* Ensure the transition includes transform */
-  font-size: 16px;
-  display: block; /* Ensures that the anchor tag takes the full available space */
+/* Text above social icons */
+.socialLinksText {
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-/* Rotate text on hover over the entire header, not just the nav-item */
-header:hover .navItem {
-  transform: rotate(0deg);
-  writing-mode: horizontal-tb;
-  margin: 15px 0;
-}
-
-/* Adjust hover color change */
-.navItem:hover {
-  color: var(--accent-color);
-}
-
-#particle-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none; /* Allows clicks to pass through */
-  overflow: hidden; /* Keeps particles within the header */
-}
-
-.particle {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  background-color: white;
-  border-radius: 50%;
-  opacity: 0.6;
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 80px;
-  background-color: var(--primary-color);
+/* Social Links Container */
+.socialLinks {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Pushes the bottom bar to the bottom */
-  padding: 20px 0;
-  z-index: 1000;
-}
-
-.bottom-bar {
-  width: 100%; /* Full width of the header */
-  height: 50px; /* Fixed height */
-  background-color: var(--secondary-color); /* Light color for contrast */
-  display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  text-align: center;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  gap: 20px;
-  text-align: center;
-  height: 100dvh;
-  min-height: 500px;
+  gap: 15px;
+}
 
-  .hero {
-    max-width: 200px;
-  }
+/* Individual Social Link Styles */
+.socialLink img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+  filter: brightness(1);
+}
 
-  span {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
+.socialLink img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.5);
+}
 
-    a {
-      margin: 0;
-
-      img {
-        width: 30px;
-      }
-    }
-  }
-
-  a {
-    width: fit-content;
-    align-self: center;
-  }
-
-  button {
-    background-color: var(--btn-color);
-    color: var(--btn-text-color);
-    border: none;
-    border-radius: 20px;
-    width: 126px;
-    height: 50px;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
-  }
-
-  button:hover {
-    transform: scale(1.05);
-  }
-
-  button:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+/* Adjust margin-top for smaller screens */
+@media (max-width: 768px) {
+  .socialLinksContainer {
+    margin-top: 200px;
   }
 }
 
-.colorModeContainer {
-  position: relative;
-}
-
-.colorMode {
-  position: absolute;
-  right: 0;
-  width: 25px;
-}
-
-.colorMode:hover {
-  cursor: pointer;
-}
-
-.description {
-  max-width: 24ch;
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-@media (width >= 800px) {
-  .container {
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-evenly;
-
-    .hero {
-      max-width: 350px;
-      width: 350px;
-    }
+@keyframes fadeInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Start slightly above */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End in the correct position */
   }
 }
 
-@media (width >= 1400px) {
-  .container {
-    .hero {
-      max-width: 400px;
-      width: 400px;
-    }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

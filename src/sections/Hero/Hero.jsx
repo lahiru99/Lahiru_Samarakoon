@@ -16,8 +16,6 @@ function Hero() {
   const roleRef = useRef(null);
 
   const themeIcon = theme === 'light' ? sun : moon;
-  const githubIcon = theme === 'light' ? githubLight : githubDark;
-  const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
 
   useEffect(() => {
     const options = {
