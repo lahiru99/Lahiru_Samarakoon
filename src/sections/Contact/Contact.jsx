@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ContactStyles.module.css';
 import githubIcon from '../../assets/github.png';
 import linkedinIcon from '../../assets/linkedin.png';
 import instagramIcon from '../../assets/instagram.png';
 import linktreeIcon from '../../assets/linktree (5).png';
 
-function Contact() {
+function Contact({ triggerFadeIn }) {
+  const [fadeIn, setFadeIn] = useState(false);
+
+  useEffect(() => {
+    if (triggerFadeIn) {
+      setFadeIn(true);
+    }
+  }, [triggerFadeIn]);
+
   return (
-    <section id="contact" className={styles.container}>
+    <section
+      id="contact"
+      className={`${styles.container} ${fadeIn ? styles.fadeIn : ''}`}
+    >
       <h1 className="sectionTitle">Contact</h1>
       <form action="https://formspree.io/f/mqazlzke" method="POST">
         <div className="formGroup">

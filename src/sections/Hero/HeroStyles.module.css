@@ -28,9 +28,19 @@
 
   h1,
   h2,
+  h1 {
+    font-size: 30px; /* Adjust this value to your desired font size */
+    margin: 0; /* Ensure no extra margin */
+    padding: 0; /* Ensure no extra padding */
+  }
   p {
-    color: #fff; /* White color for better visibility */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Text shadow for readability */
+    max-width: 1000px; /* Limits the width of the paragraph */
+    margin: 5px auto; /* Centers the paragraph and reduces top and bottom margin */
+    line-height: 1.4; /* Reduces line height for tighter text */
+    padding: 2px; /* Reduced padding inside the text container */
+    /* Optional: Semi-transparent background for better readability */
+    border-radius: 20px; /* Optional: Rounded corners */
+    font-size: 26px; /* Adjust font size to make it more compact */
   }
 
   span {

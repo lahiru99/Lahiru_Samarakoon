@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import Typed from 'typed.js';
 import styles from './HeroStyles.module.css';
 import heroImg from '../../assets/Profile_Img1.0.png';
-import sun from '../../assets/sun.svg';
+import sun from '../../assets/sun2.svg';
 import moon from '../../assets/moon.svg';
 import githubLight from '../../assets/github-light.svg';
 import githubDark from '../../assets/github-dark.svg';
@@ -59,7 +59,12 @@ function Hero() {
       <div className={styles.info}>
         <h1>Hi, I'm Lahiru Samarakoon</h1>
         <h2 ref={roleRef}></h2>
-        <p>With a passion for developing websites and apps</p>
+        <p>
+          Driven by curiosity and a passion for innovation, I am committed to
+          lifelong learning and efficient problem-solving. I excel in
+          collaborative environments and am eager to contribute my skills to
+          developing cutting-edge web applications that shape the future.
+        </p>
         <a href={CV} download>
           <button className="hover">Resume</button>
         </a>

@@ -10,14 +10,14 @@
   width: 100%;
   z-index: 1000;
   display: flex;
-  justify-content: space-between; /* Adjusted to space between for logo and menu */
+  justify-content: space-between;
   align-items: center;
   background-color: var(--bg-color);
   padding: 15px 30px;
 }
 
 .logo {
-  margin-left: 20px; /* Adjust margin as needed */
+  margin-left: 20px;
 }
 
 .hamburger {
@@ -58,8 +58,8 @@
 .navLinks li {
   margin: 15px 0;
   text-align: center;
-  opacity: 0; /* Initially hidden */
-  transform: translateY(20px); /* Initial position slightly off-screen */
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .menu.open .navLinks li:nth-child(1) {
@@ -106,7 +106,7 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
 }
 
 .menu.open .socialLinksContainer {
@@ -151,11 +151,11 @@
 @keyframes fadeInFromTop {
   0% {
     opacity: 0;
-    transform: translateY(-20px); /* Start slightly above */
+    transform: translateY(-20px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* End in the correct position */
+    transform: translateY(0);
   }
 }
 

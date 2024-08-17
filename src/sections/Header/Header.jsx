@@ -52,7 +52,7 @@ const Header = () => {
           </li>
         </ul>
         <div className={styles.socialLinksContainer}>
-          <div className={styles.socialLinksText}>FOLLOW US:</div>
+          <div className={styles.socialLinksText}>FOLLOW ME:</div>
           <div className={styles.socialLinks}>
             <a
               href="https://github.com/lahiru99"
