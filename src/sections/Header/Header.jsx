@@ -5,20 +5,26 @@ import instagramIcon from '../../assets/instagram.png';
 import githubIcon from '../../assets/github.png';
 import linkedinIcon from '../../assets/linkedin.png';
 import linktreeIcon from '../../assets/linktree (5).png';
+import sunIcon from '../../assets/sun2.svg'; // Import sun icon
+import moonIcon from '../../assets/moon.svg'; // Import moon icon
+import { useTheme } from '../../common/ThemeContext'; // Use your theme context
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const themeIcon = theme === 'light' ? sunIcon : moonIcon; // Determine icon based on theme
 
   return (
     <div className={styles.container}>
       <img src={logo} alt="Logo" className={styles.logo} />
 
       <button
-        className={`${styles.hamburger}`}
+        className={styles.hamburger}
         onClick={toggleMenu}
         aria-label="Toggle menu"
       >
@@ -26,6 +32,15 @@ const Header = () => {
       </button>
 
       <nav className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
+        {/* Theme toggle button right below the close button */}
+        <button
+          className={styles.themeToggle}
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+        >
+          <img src={themeIcon} alt="Theme toggle icon" />
+        </button>
+
         <ul className={styles.navLinks}>
           <li>
             <a href="#hero" className={`${styles.navItem} ${styles.center}`}>

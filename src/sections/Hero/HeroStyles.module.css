@@ -1,3 +1,17 @@
+:root {
+  --primary-color: #ffffff; /* White, used as the default text color */
+  --bg-color: #000000; /* Black */
+  --btn-color: #ffffff; /* Button color */
+  --btn-text-color: #000000; /* Button text color */
+}
+
+/* Ensure hero section text color remains consistent */
+.container h1,
+.container h2,
+.container p {
+  color: var(--primary-color); /* Consistent text color */
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -8,44 +22,40 @@
   min-height: 500px;
 
   .hero {
-    max-width: 200px;
+    max-width: 150px; /* Reduce size for mobile */
+    margin: 0 auto; /* Center the image */
   }
 
   .info {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    z-index: 10; /* Keeping all interactive elements above the iframe */
-    background: rgba(
-      0,
-      0,
-      0,
-      0.5
-    ); /* Semi-transparent background for better readability */
-    padding: 20px; /* Adding padding to separate text from edges */
-    border-radius: 10px; /* Optional rounded corners */
+    gap: 10px; /* Reduce gap between elements */
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px; /* Adjust padding for mobile */
+    border-radius: 10px;
+    margin: 0 10px; /* Add some margin to prevent edge clipping */
   }
 
   h1,
-  h2,
-  h1 {
-    font-size: 30px; /* Adjust this value to your desired font size */
-    margin: 0; /* Ensure no extra margin */
-    padding: 0; /* Ensure no extra padding */
+  h2 {
+    font-size: 24px; /* Smaller font size for mobile */
+    margin: 0;
+    padding: 0;
   }
+
   p {
-    max-width: 1000px; /* Limits the width of the paragraph */
-    margin: 5px auto; /* Centers the paragraph and reduces top and bottom margin */
-    line-height: 1.4; /* Reduces line height for tighter text */
-    padding: 2px; /* Reduced padding inside the text container */
-    /* Optional: Semi-transparent background for better readability */
-    border-radius: 20px; /* Optional: Rounded corners */
-    font-size: 26px; /* Adjust font size to make it more compact */
+    max-width: 90%; /* Reduce width to fit better on mobile */
+    margin: 10px auto; /* Center text and add some margin */
+    line-height: 1.4;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 16px; /* Smaller font size for mobile */
   }
 
   span {
     display: flex;
-    gap: 25px;
+    gap: 15px; /* Reduce gap for mobile */
     justify-content: center;
   }
 
@@ -56,7 +66,7 @@
   }
 
   a img {
-    width: 30px;
+    width: 25px; /* Reduce icon size for mobile */
   }
 
   button {
@@ -64,9 +74,9 @@
     color: var(--btn-text-color);
     border: none;
     border-radius: 20px;
-    width: 126px;
-    height: 50px;
-    font-size: 20px;
+    width: 120px; /* Slightly reduce button size */
+    height: 45px;
+    font-size: 18px;
     font-weight: bold;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
@@ -89,7 +99,7 @@
 .colorMode {
   position: absolute;
   right: 0;
-  width: 25px;
+  width: 20px; /* Reduce icon size for mobile */
 }
 
 .colorMode:hover {
@@ -103,10 +113,10 @@
 .info {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
-@media (width >= 800px) {
+@media (min-width: 800px) {
   .container {
     flex-direction: row-reverse;
     align-items: center;
@@ -116,14 +126,32 @@
       max-width: 350px;
       width: 350px;
     }
+
+    .info h1,
+    .info h2 {
+      font-size: 28px; /* Adjusted font size for tablet view */
+    }
+
+    .info p {
+      font-size: 18px; /* Adjusted font size for tablet view */
+    }
   }
 }
 
-@media (width >= 1400px) {
+@media (min-width: 1400px) {
   .container {
     .hero {
       max-width: 400px;
       width: 400px;
+    }
+
+    .info h1,
+    .info h2 {
+      font-size: 32px; /* Adjusted font size for large screens */
+    }
+
+    .info p {
+      font-size: 20px; /* Adjusted font size for large screens */
     }
   }
 }

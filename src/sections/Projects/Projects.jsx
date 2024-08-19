@@ -13,13 +13,13 @@ function Projects() {
           src={viberr}
           link={'https://github.com/lahiru99/ScootShare'}
           h3="ScootShare"
-          p="Shooter Share Website"
+          p="Website(Powered by Raspberry Pi)"
         />
         <ProjectCard
           src={snakeGame}
           link={'https://github.com/lahiru99/Snake_SFML'}
           h3="Snake Game"
-          p="Ruby Shopping website"
+          p="Snake Game made with C++"
         />
         <ProjectCard
           src={shop}

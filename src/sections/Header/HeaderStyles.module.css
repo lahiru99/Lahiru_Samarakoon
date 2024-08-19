@@ -43,6 +43,7 @@
   flex-direction: column;
   padding-top: 70px;
   z-index: 2000;
+  overflow-y: auto; /* Ensure the menu can scroll if content overflows */
 }
 
 .menu.open {
@@ -146,6 +147,27 @@
   .socialLinksContainer {
     margin-top: 200px;
   }
+
+  .menu {
+    width: 200px; /* Adjust menu width for smaller screens */
+    padding-top: 60px; /* Adjust padding */
+  }
+
+  .hamburger {
+    margin-right: 20px; /* Adjust margin */
+  }
+
+  .navLinks a {
+    font-size: 18px; /* Slightly reduce font size for smaller screens */
+  }
+
+  .menu.open {
+    transform: translateX(0);
+  }
+
+  .socialLinksContainer {
+    margin-top: 150px; /* Adjust margin-top for better spacing */
+  }
 }
 
 @keyframes fadeInFromTop {
@@ -167,5 +189,25 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.themeToggle {
+  position: absolute;
+  top: 70px; /* This value is for positioning down the icon */
+  right: 15px; /* Adjust this to align with the close button in mobile view */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.themeToggle img {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .themeToggle {
+    right: -3px; /* Adjust this value to align with the 'X' in mobile view */
   }
 }
