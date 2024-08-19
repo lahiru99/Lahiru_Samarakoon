@@ -19,27 +19,33 @@
   gap: 20px;
   text-align: center;
   height: 100dvh;
-  min-height: 500px;
+  min-height: 600px;
+  padding-top: 80px; /* Adjusted padding to balance header and content */
 
   .hero {
-    max-width: 150px; /* Reduce size for mobile */
+    max-width: 200px; /* Maintain a larger size for mobile */
     margin: 0 auto; /* Center the image */
   }
 
   .info {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Reduce gap between elements */
+    gap: 15px; /* Maintain spacing between elements */
     z-index: 10;
     background: rgba(0, 0, 0, 0.5);
-    padding: 15px; /* Adjust padding for mobile */
+    padding: 20px; /* Maintain padding for readability */
     border-radius: 10px;
     margin: 0 10px; /* Add some margin to prevent edge clipping */
   }
 
-  h1,
+  h1 {
+    font-size: 28px; /* Keep font size large for readability */
+    margin: 0;
+    padding: 0;
+  }
+
   h2 {
-    font-size: 24px; /* Smaller font size for mobile */
+    font-size: 24px; /* Slightly smaller subheading */
     margin: 0;
     padding: 0;
   }
@@ -47,15 +53,15 @@
   p {
     max-width: 90%; /* Reduce width to fit better on mobile */
     margin: 10px auto; /* Center text and add some margin */
-    line-height: 1.4;
-    padding: 5px;
+    line-height: 1.6; /* Increase line height for readability */
+    padding: 10px;
     border-radius: 10px;
-    font-size: 16px; /* Smaller font size for mobile */
+    font-size: 18px; /* Keep a readable font size */
   }
 
   span {
     display: flex;
-    gap: 15px; /* Reduce gap for mobile */
+    gap: 20px; /* Maintain gap for mobile */
     justify-content: center;
   }
 
@@ -66,7 +72,7 @@
   }
 
   a img {
-    width: 25px; /* Reduce icon size for mobile */
+    width: 32px; /* Adjust icon size for better visibility */
   }
 
   button {
@@ -74,9 +80,9 @@
     color: var(--btn-text-color);
     border: none;
     border-radius: 20px;
-    width: 120px; /* Slightly reduce button size */
-    height: 45px;
-    font-size: 18px;
+    width: 140px; /* Maintain a reasonable button size */
+    height: 50px;
+    font-size: 18px; /* Keep button text large and readable */
     font-weight: bold;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
@@ -99,7 +105,7 @@
 .colorMode {
   position: absolute;
   right: 0;
-  width: 20px; /* Reduce icon size for mobile */
+  width: 24px; /* Slightly larger icon size */
 }
 
 .colorMode:hover {
@@ -113,7 +119,7 @@
 .info {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px; /* Maintain gap between elements */
 }
 
 @media (min-width: 800px) {
@@ -123,17 +129,20 @@
     justify-content: space-evenly;
 
     .hero {
-      max-width: 350px;
-      width: 350px;
+      max-width: 300px; /* Increase image size for tablets */
+      width: 300px;
     }
 
-    .info h1,
+    .info h1 {
+      font-size: 32px; /* Increase font size for tablets */
+    }
+
     .info h2 {
-      font-size: 28px; /* Adjusted font size for tablet view */
+      font-size: 28px; /* Increase font size for tablets */
     }
 
     .info p {
-      font-size: 18px; /* Adjusted font size for tablet view */
+      font-size: 20px; /* Increase font size for tablets */
     }
   }
 }
@@ -141,17 +150,33 @@
 @media (min-width: 1400px) {
   .container {
     .hero {
-      max-width: 400px;
+      max-width: 400px; /* Maintain large image size for larger screens */
       width: 400px;
     }
 
-    .info h1,
+    .info h1 {
+      font-size: 36px; /* Increase font size for large screens */
+    }
+
     .info h2 {
-      font-size: 32px; /* Adjusted font size for large screens */
+      font-size: 32px; /* Increase font size for large screens */
     }
 
     .info p {
-      font-size: 20px; /* Adjusted font size for large screens */
+      font-size: 22px; /* Increase font size for large screens */
     }
+  }
+}
+
+/* Adjust padding-top based on viewport height */
+@media (max-height: 700px) {
+  .container {
+    padding-top: 100px; /* Increase padding for shorter screens */
+  }
+}
+
+@media (max-height: 600px) {
+  .container {
+    padding-top: 120px; /* Further increase padding for very short screens */
   }
 }

@@ -208,6 +208,6 @@
 
 @media (max-width: 768px) {
   .themeToggle {
-    right: -3px; /* Adjust this value to align with the 'X' in mobile view */
+    right: -px; /* Adjust this value to align with the 'X' in mobile view */
   }
 }

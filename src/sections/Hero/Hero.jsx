@@ -4,10 +4,6 @@ import styles from './HeroStyles.module.css';
 import heroImg from '../../assets/Profile_Img1.0.png';
 import sun from '../../assets/sun2.svg';
 import moon from '../../assets/moon.svg';
-import githubLight from '../../assets/github-light.svg';
-import githubDark from '../../assets/github-dark.svg';
-import linkedinLight from '../../assets/linkedin-light.svg';
-import linkedinDark from '../../assets/linkedin-dark.svg';
 import { useTheme } from '../../common/ThemeContext';
 import CV from '../../assets/cv.pdf';
 

@@ -4,10 +4,10 @@ import logo from '../../assets/Logo1.png';
 import instagramIcon from '../../assets/instagram.png';
 import githubIcon from '../../assets/github.png';
 import linkedinIcon from '../../assets/linkedin.png';
-import linktreeIcon from '../../assets/linktree (5).png';
-import sunIcon from '../../assets/sun2.svg'; // Import sun icon
-import moonIcon from '../../assets/moon.svg'; // Import moon icon
-import { useTheme } from '../../common/ThemeContext'; // Use your theme context
+import linktreeIcon from '../../assets/linktree.png';
+import sunIcon from '../../assets/sun2.svg';
+import moonIcon from '../../assets/moon.svg';
+import { useTheme } from '../../common/ThemeContext';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
