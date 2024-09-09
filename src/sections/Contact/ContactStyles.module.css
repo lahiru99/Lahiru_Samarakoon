@@ -45,6 +45,7 @@ textarea {
   justify-self: center;
   background-color: var(--background-color);
   color: var(--form-text-color);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 ::placeholder {

@@ -1,0 +1,99 @@
+.chatBotContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chatBotButton {
+  background-color: #ff0000; /* Red color for the button */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.chatBotButton:hover {
+  background-color: #cc0000; /* Darker red on hover */
+  transform: scale(1.1);
+}
+
+.chatBotButton:active {
+  background-color: #990000; /* Even darker red on click */
+  transform: scale(0.95);
+}
+
+.chatBotWindow {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background-color: black; /* Black background for the chat window */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatHeader {
+  background-color: #ff0000; /* Red header */
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatBody {
+  flex: 1;
+  padding: 10px;
+  color: white;
+  overflow-y: auto;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.chatBotWindow {
+  background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
+}
+
+@media (max-width: 600px) {
+  .chatBotWindow {
+    width: 250px;
+    height: 350px;
+    bottom: 60px;
+    right: 20px;
+  }
+
+  .chatBotButton {
+    width: 50px;
+    height: 50px;
+  }
+}

@@ -16,52 +16,53 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  align-items: center; /* Center content horizontally */
   text-align: center;
-  height: 100dvh;
+  height: 100vh; /* Full viewport height */
   min-height: 600px;
-  padding-top: 80px; /* Adjusted padding to balance header and content */
+  padding-top: 60px; /* Adjusted padding to balance header and content */
 
   .hero {
-    max-width: 200px; /* Maintain a larger size for mobile */
+    max-width: 150px; /* Maintain a larger size for mobile */
+    width: 100%; /* Ensure full width */
     margin: 0 auto; /* Center the image */
   }
 
   .info {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Maintain spacing between elements */
+    gap: 10px; /* Maintain spacing between elements */
     z-index: 10;
     background: rgba(0, 0, 0, 0.5);
     padding: 20px; /* Maintain padding for readability */
     border-radius: 10px;
-    margin: 0 10px; /* Add some margin to prevent edge clipping */
+    margin: 20px 10px; /* Add margin to avoid clipping */
   }
 
   h1 {
-    font-size: 28px; /* Keep font size large for readability */
+    font-size: 24px; /* Slightly smaller for better scaling */
     margin: 0;
     padding: 0;
   }
 
   h2 {
-    font-size: 24px; /* Slightly smaller subheading */
+    font-size: 20px; /* Keep subheading consistent */
     margin: 0;
     padding: 0;
   }
 
   p {
-    max-width: 90%; /* Reduce width to fit better on mobile */
+    max-width: 85%; /* Reduce width to fit better on mobile */
     margin: 10px auto; /* Center text and add some margin */
-    line-height: 1.6; /* Increase line height for readability */
+    line-height: 1.4; /* Adjust line height for readability */
     padding: 10px;
     border-radius: 10px;
-    font-size: 18px; /* Keep a readable font size */
+    font-size: 16px; /* Keep font size readable */
   }
 
   span {
     display: flex;
-    gap: 20px; /* Maintain gap for mobile */
+    gap: 10px; /* Maintain gap for mobile */
     justify-content: center;
   }
 
@@ -72,7 +73,7 @@
   }
 
   a img {
-    width: 32px; /* Adjust icon size for better visibility */
+    width: 24px; /* Maintain icon size */
   }
 
   button {
@@ -80,9 +81,9 @@
     color: var(--btn-text-color);
     border: none;
     border-radius: 20px;
-    width: 140px; /* Maintain a reasonable button size */
-    height: 50px;
-    font-size: 18px; /* Keep button text large and readable */
+    width: 120px; /* Maintain button size */
+    height: 40px;
+    font-size: 16px; /* Keep button text readable */
     font-weight: bold;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
@@ -105,7 +106,7 @@
 .colorMode {
   position: absolute;
   right: 0;
-  width: 24px; /* Slightly larger icon size */
+  width: 20px; /* Maintain icon size */
 }
 
 .colorMode:hover {
@@ -119,7 +120,7 @@
 .info {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Maintain gap between elements */
+  gap: 10px;
 }
 
 @media (min-width: 800px) {
@@ -129,20 +130,20 @@
     justify-content: space-evenly;
 
     .hero {
-      max-width: 300px; /* Increase image size for tablets */
-      width: 300px;
+      max-width: 250px;
+      width: 250px;
     }
 
     .info h1 {
-      font-size: 32px; /* Increase font size for tablets */
+      font-size: 28px;
     }
 
     .info h2 {
-      font-size: 28px; /* Increase font size for tablets */
+      font-size: 24px;
     }
 
     .info p {
-      font-size: 20px; /* Increase font size for tablets */
+      font-size: 18px;
     }
   }
 }
@@ -150,20 +151,20 @@
 @media (min-width: 1400px) {
   .container {
     .hero {
-      max-width: 400px; /* Maintain large image size for larger screens */
-      width: 400px;
+      max-width: 300px;
+      width: 300px;
     }
 
     .info h1 {
-      font-size: 36px; /* Increase font size for large screens */
+      font-size: 32px;
     }
 
     .info h2 {
-      font-size: 32px; /* Increase font size for large screens */
+      font-size: 28px;
     }
 
     .info p {
-      font-size: 22px; /* Increase font size for large screens */
+      font-size: 20px;
     }
   }
 }
@@ -171,12 +172,12 @@
 /* Adjust padding-top based on viewport height */
 @media (max-height: 700px) {
   .container {
-    padding-top: 100px; /* Increase padding for shorter screens */
+    padding-top: 80px;
   }
 }
 
 @media (max-height: 600px) {
   .container {
-    padding-top: 120px; /* Further increase padding for very short screens */
+    padding-top: 100px;
   }
 }
